@@ -20,7 +20,7 @@ router.get("/register", (req, res) => {
 
 //Handle register
 router.post("/register", (req, res) => {
-  const { username, email, password, password2 } = req.body;
+  const { username, email, password, password2, phone } = req.body;
 
   //Errors array
   const errors = [];
@@ -60,26 +60,28 @@ router.post("/register", (req, res) => {
           errors,
           username,
           email,
+          phone,
           password,
           password2,
         });
       } else {
-        const user = new User({
+        const newUser = new User({
           username,
           email,
+          phone,
           password,
         });
 
         //Hash password
         bcrypt.genSalt(10, (err, salt) =>
-          bcrypt.hash(user.password, salt, (err, hash) => {
+          bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) throw err;
 
             //Set password to hashed
-            user.password = hash;
-
+            newUser.password = hash;
             //Save the user,it returns a promise
-            user
+
+            newUser
               .save()
               .then((user) => {
                 req.flash("success_msg", "You are now registered,please login");
@@ -110,5 +112,14 @@ router.get("/logout", (req, res) => {
     res.redirect("/users/login");
   });
 });
+
+//Booking page
+
+//Myevents Page
+// router.get("/myevents", (req, res) => {
+//   res.render("myevents", {
+//     layout: "dash",
+//   });
+// });
 
 module.exports = router;

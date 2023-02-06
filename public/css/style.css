@@ -1014,7 +1014,28 @@ h6 {
 .profile .profile-card img {
   max-width: 120px;
 }
+.profile-fields {
+  display: flex;
+  flex-direction: column;
+}
 
+.fields {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+.fields label {
+  color: #012970;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.fields p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 .profile .profile-card h2 {
   font-size: 24px;
   font-weight: 700;
@@ -1227,6 +1248,13 @@ h6 {
 
 .error-404 .btn:hover {
   background: #3e4f6f;
+}
+.cancel {
+  border: none;
+  background-color: red;
+  color: #fff;
+  padding: 6px 16px;
+  border-radius: 6px;
 }
 
 @media (min-width: 992px) {

@@ -1,0 +1,61 @@
+<!-- End Sidebar-->
+
+
+<main id="main" class="main">
+      <div class="pagetitle">
+        <h1>My Events</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+            <li class="breadcrumb-item active">Events</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+      <main>
+        <section class="section">
+          <button type="button" class="btn btn-primary"><a href="/admin/events/add" class="text-white">Add Event</a></button>
+          
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            
+                            <th scope="col">Event ID</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Venue</th>
+                            <th scope="col">Date &amp; Time</th>
+                            <th scope="col">Capacity</th>
+                            <th scope="col">Cost</th>
+                            <th scope="col" class="px-4">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                              <tr>
+                                <td>54534738</td>
+                                <td>Wedding</td>
+                                <td>Nairobi</td>
+                                <td>Wed 12-9-2023</td>
+                                <td>500</td>
+                                <td>Ksh.5000</td>
+                                <td ><span class="px-4"><a class="text-success" href="/events/update">Update</a></span><a class="text-danger" href="">Delete</a></td>
+                                
+                              </tr>
+                     
+                        
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+      </section>
+    </main>
+
+{{!-- {{else}}
+  <p style="margin-top: 120px; margin-left: 600px;">You currently have no
+    events,please book an event</p>
+{{/if}} --}}
+
+
+<!-- End #main -->

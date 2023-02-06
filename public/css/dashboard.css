@@ -1239,6 +1239,11 @@ h6 {
 # Footer
 --------------------------------------------------------------*/
 .footer {
+  position: fixed;
+  bottom: 0;
+  right: 50;
+  left: 50;
+
   padding: 20px 0;
   font-size: 14px;
   transition: all 0.3s;
@@ -1255,4 +1260,17 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+.cancel {
+  border: none;
+  background-color: red;
+  color: #fff;
+  padding: 12px;
+}
+.payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  margin-left: 800px;
 }

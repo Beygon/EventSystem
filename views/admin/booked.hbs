@@ -1,0 +1,58 @@
+<!-- End Sidebar-->
+
+{{#if booked}}
+<main id="main" class="main">
+      <div class="pagetitle">
+        <h1>Booked</h1>
+        <nav>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/dashboard">Home</a></li>
+            <li class="breadcrumb-item active">Booked Events</li>
+          </ol>
+        </nav>
+      </div>
+      <!-- End Page Title -->
+      <main>
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table">
+                        <thead>
+                          <tr>
+                            <th scope="col">User Email</th>
+                            <th scope="col">Event ID</th>
+                            <th scope="col">Booked On</th>
+                            <th scope="col">Event Type</th>
+                            <th scope="col">Event Date</th>
+                            <th scope="col">Venue</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         {{#each booked}}
+                              <tr>
+                                <td>{{user.email}}</td>
+                                <td>{{_id}}</td>
+                                <td>{{formatDate createdAt 'MMMM Do YYYY, h:mm:ss a'}}</td>
+                                <td>{{event}}</td>
+                                <td>{{starttime}}</td>
+                                <td>{{venue}}</td>
+                                <td><span class="text-warning">{{status}}</span></td>
+                                <td><a href="/admin/update/{{_id}}" class="text-danger">Update</a></td>
+                              </tr>
+                         {{/each}}
+                        
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+      </section>
+    </main>
+
+{{else}}
+  <p style="margin-top: 120px; margin-left: 600px;">No event has been booked!</p>
+{{/if}}
+
+
+<!-- End #main -->

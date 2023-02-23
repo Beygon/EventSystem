@@ -1,11 +1,14 @@
 {
+  "homepage": "http://beygon.github.io/",
   "name": "book",
   "version": "1.0.0",
   "description": "booking app",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "Beygon",
   "license": "ISC",
